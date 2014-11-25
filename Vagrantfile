@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
     vmconfig.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", MEMORY]
     end
+    vmconfig.vm.synced_folder "../fc.mcollective", "/home/vagrant/fc.mcollective"
     vmconfig.vm.box = "centos_6_3_x86_64"
     vmconfig.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.3-x86_64-v20130101.box"
     vmconfig.vm.provision :shell, :inline => $set_puppet_version
@@ -49,6 +50,7 @@ Vagrant.configure("2") do |config|
       vmconfig.vm.provider :virtualbox do |vb|
           vb.customize ["modifyvm", :id, "--memory", MEMORY]
       end
+      vmconfig.vm.synced_folder "../fc.mcollective", "/home/vagrant/fc.mcollective"
       vmconfig.vm.hostname = "node%d.#{DOMAIN}" % i
       vmconfig.vm.box = "centos_6_3_x86_64"
 
