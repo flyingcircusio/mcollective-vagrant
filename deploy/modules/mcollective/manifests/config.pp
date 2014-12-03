@@ -33,4 +33,12 @@ class mcollective::config {
       group => root,
       mode => 0444,
    }
+
+   file{"/etc/mcollective/authorized_nodes.yaml":
+      content => template("mcollective/authorized_nodes.yaml"),
+      owner => root,
+      group => root,
+      mode => 0444,
+   }
+
 }

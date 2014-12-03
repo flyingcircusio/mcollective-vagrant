@@ -1,0 +1,5 @@
+# Only nodes in this file are authorized to send messages.
+
+authorized_nodes:
+    - node1.example.net
+    - middleware.example.net
