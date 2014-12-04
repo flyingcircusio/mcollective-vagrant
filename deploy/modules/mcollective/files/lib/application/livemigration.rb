@@ -1,1 +1,1 @@
-/home/vagrant/fc.mcollective/application/livemigration.rb
+/home/vagrant/fc.mcollective/mcollective/application/livemigration.rb

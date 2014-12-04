@@ -1,1 +1,1 @@
-/home/vagrant/fc.mcollective/util/fcauthorization.rb
+/home/vagrant/fc.mcollective/mcollective/util/fcauthorization.rb

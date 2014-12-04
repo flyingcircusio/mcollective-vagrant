@@ -1,1 +1,1 @@
-/home/vagrant/fc.mcollective/agent/livemigration.ddl
+/home/vagrant/fc.mcollective/mcollective/agent/livemigration.ddl

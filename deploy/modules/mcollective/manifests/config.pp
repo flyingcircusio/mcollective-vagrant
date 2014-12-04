@@ -27,6 +27,26 @@ class mcollective::config {
       source => "puppet:///modules/mcollective/lib"
    }
 
+   # Old location of implemented_by scripts, symlink to new location
+   file{"/usr/libexec/mcollective/agents":
+      ensure => "directory",
+      owner => root,
+      group => root,
+      mode => 755
+   }
+   file{"/usr/libexec/mcollective/agents/livemigration":
+      ensure => "link",
+      target => "/usr/libexec/mcollective/mcollective/agent/livemigration"
+   }
+
+
+   # Symlink mock fc-qemu to $PATH
+   file{"/usr/bin/fc-qemu":
+      ensure => "link",
+      target => "/home/vagrant/fc.mcollective/tests/fc.qemu"
+   }
+
+
    file{"/etc/mcollective/facts.yaml":
       content => inline_template("<%= Hash[scope.to_hash.reject { |k,v| k.to_s =~ /(uptime|timestamp|memory|free|swap)/ }.sort].to_yaml %>"),
       owner => root,
@@ -40,5 +60,9 @@ class mcollective::config {
       group => root,
       mode => 0444,
    }
+
+
+
+
 
 }
